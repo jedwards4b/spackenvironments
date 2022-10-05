@@ -6,28 +6,28 @@
   },
   "roots": [
     {
-      "hash": "ifgoogxrm4ye3robw3ubketiandg6ffk",
-      "spec": "parallelio%gcc~mpi ^netcdf-fortran"
+      "hash": "la2zrwjx2s25gfym6hsspshhibqu5iz4",
+      "spec": "parallelio%gcc~mpi"
     },
     {
-      "hash": "g7xqojwh2j63m2hvp72akjfq6d7txyg6",
-      "spec": "parallelio%oneapi~mpi ^netcdf-fortran"
+      "hash": "kazrzdg3b5phl2bzd2jadtloshahsrnv",
+      "spec": "parallelio%oneapi~mpi"
     },
     {
-      "hash": "ufohqjvbj6uxwpsll3qtl6q45n5uzqvw",
-      "spec": "parallelio%cce~mpi ^netcdf-fortran"
+      "hash": "mbfwg4fvrcqq2m3ijhncbkgyqolrm66b",
+      "spec": "parallelio%cce~mpi"
     },
     {
-      "hash": "5dgo5fyyrd6vsb7ckheif7vvxyrmdb3u",
-      "spec": "parallelio%intel~mpi ^netcdf-fortran"
+      "hash": "papnbqus6geqqs5jp47fi74kshuqckcy",
+      "spec": "parallelio%intel~mpi"
     },
     {
-      "hash": "5dg4stipm2tlzdjcradtlca3qxipzitv",
-      "spec": "parallelio%nvhpc~mpi ^netcdf-fortran"
+      "hash": "wehajdwyfg45ca2w2zpvlocvo3mbs56y",
+      "spec": "parallelio%nvhpc~mpi"
     }
   ],
   "concrete_specs": {
-    "ifgoogxrm4ye3robw3ubketiandg6ffk": {
+    "la2zrwjx2s25gfym6hsspshhibqu5iz4": {
       "name": "parallelio",
       "version": "2.5.9",
       "arch": {
@@ -93,18 +93,18 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "34cehxts5lzumgyqht2awckmpnzhu3stgakbsw4glcjfcro6o7ka====",
+      "package_hash": "4ukp25jj5fvt4u3tztimwtxgxgqpxsabushzikineil2fg3eyyiq====",
       "dependencies": [
         {
           "name": "cmake",
-          "hash": "qvxsiqgjwjrs3oazqcmggni6k4f772an",
+          "hash": "f5cv62qqljcxh3e4rginukoa47hhs7fc",
           "type": [
             "build"
           ]
         },
         {
           "name": "mpi-serial",
-          "hash": "zuhfgbdpwng6ezocdsvplvanvyh4imfy",
+          "hash": "av6rmbr5sw2c3nm5jc4scmlaab5rwcrz",
           "type": [
             "build",
             "link"
@@ -125,9 +125,9 @@
           ]
         }
       ],
-      "hash": "ifgoogxrm4ye3robw3ubketiandg6ffk"
+      "hash": "la2zrwjx2s25gfym6hsspshhibqu5iz4"
     },
-    "qvxsiqgjwjrs3oazqcmggni6k4f772an": {
+    "f5cv62qqljcxh3e4rginukoa47hhs7fc": {
       "name": "cmake",
       "version": "3.23.2",
       "arch": {
@@ -185,7 +185,9 @@
         "ownlibs": true,
         "qt": false,
         "cflags": [],
-        "cppflags": [],
+        "cppflags": [
+          "-DNO_MPIMOD"
+        ],
         "cxxflags": [],
         "fflags": [],
         "ldflags": [],
@@ -197,9 +199,9 @@
         "extra_attributes": {}
       },
       "package_hash": "3ky53hrr7bxrwp6ltjygpfolyquwjn6akjdkbuy4x3wwuw5eacba====",
-      "hash": "qvxsiqgjwjrs3oazqcmggni6k4f772an"
+      "hash": "f5cv62qqljcxh3e4rginukoa47hhs7fc"
     },
-    "zuhfgbdpwng6ezocdsvplvanvyh4imfy": {
+    "av6rmbr5sw2c3nm5jc4scmlaab5rwcrz": {
       "name": "mpi-serial",
       "version": "2.3.0",
       "arch": {
@@ -257,7 +259,9 @@
           "85f19e3d962e4b2f99137e8cd0bcad412fe6185c771434ab3f04b5cdcca24a27"
         ],
         "cflags": [],
-        "cppflags": [],
+        "cppflags": [
+          "-fPIC"
+        ],
         "cxxflags": [],
         "fflags": [],
         "ldflags": [],
@@ -267,7 +271,7 @@
         "85f19e3d962e4b2f99137e8cd0bcad412fe6185c771434ab3f04b5cdcca24a27"
       ],
       "package_hash": "ofyrazdvmuhpv7xkdfmpdcxlmvqsf3m3esovtrlxt3o64mewsesa====",
-      "hash": "zuhfgbdpwng6ezocdsvplvanvyh4imfy"
+      "hash": "av6rmbr5sw2c3nm5jc4scmlaab5rwcrz"
     },
     "rkamj6phvau7wk3gh5rxksdzhlg24qty": {
       "name": "netcdf-c",
@@ -420,7 +424,7 @@
       "package_hash": "shzsuavc7eqjkyty7geitkmbyixddqhfyoagi7ncyhz73k2kfc4a====",
       "hash": "gr6qahn267kaik2sufrulxcfi2g4b7da"
     },
-    "g7xqojwh2j63m2hvp72akjfq6d7txyg6": {
+    "kazrzdg3b5phl2bzd2jadtloshahsrnv": {
       "name": "parallelio",
       "version": "2.5.9",
       "arch": {
@@ -486,7 +490,7 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "34cehxts5lzumgyqht2awckmpnzhu3stgakbsw4glcjfcro6o7ka====",
+      "package_hash": "4ukp25jj5fvt4u3tztimwtxgxgqpxsabushzikineil2fg3eyyiq====",
       "dependencies": [
         {
           "name": "cmake",
@@ -497,7 +501,7 @@
         },
         {
           "name": "mpi-serial",
-          "hash": "qbaefzmrwry2drvgo7yjrlnxfoj4dasz",
+          "hash": "oiheewtrxcwx4u54k2x33nqm7cattuop",
           "type": [
             "build",
             "link"
@@ -518,7 +522,7 @@
           ]
         }
       ],
-      "hash": "g7xqojwh2j63m2hvp72akjfq6d7txyg6"
+      "hash": "kazrzdg3b5phl2bzd2jadtloshahsrnv"
     },
     "z2ahke6lro67ax4skrru6dmm5mfymqpt": {
       "name": "cmake",
@@ -592,7 +596,7 @@
       "package_hash": "3ky53hrr7bxrwp6ltjygpfolyquwjn6akjdkbuy4x3wwuw5eacba====",
       "hash": "z2ahke6lro67ax4skrru6dmm5mfymqpt"
     },
-    "qbaefzmrwry2drvgo7yjrlnxfoj4dasz": {
+    "oiheewtrxcwx4u54k2x33nqm7cattuop": {
       "name": "mpi-serial",
       "version": "2.3.0",
       "arch": {
@@ -650,7 +654,9 @@
           "85f19e3d962e4b2f99137e8cd0bcad412fe6185c771434ab3f04b5cdcca24a27"
         ],
         "cflags": [],
-        "cppflags": [],
+        "cppflags": [
+          "-fPIC"
+        ],
         "cxxflags": [],
         "fflags": [],
         "ldflags": [],
@@ -660,7 +666,7 @@
         "85f19e3d962e4b2f99137e8cd0bcad412fe6185c771434ab3f04b5cdcca24a27"
       ],
       "package_hash": "ofyrazdvmuhpv7xkdfmpdcxlmvqsf3m3esovtrlxt3o64mewsesa====",
-      "hash": "qbaefzmrwry2drvgo7yjrlnxfoj4dasz"
+      "hash": "oiheewtrxcwx4u54k2x33nqm7cattuop"
     },
     "fe7dr3kqsu7otz2loujog2q5lnrvmsgz": {
       "name": "netcdf-c",
@@ -813,7 +819,7 @@
       "package_hash": "shzsuavc7eqjkyty7geitkmbyixddqhfyoagi7ncyhz73k2kfc4a====",
       "hash": "duzjga4us2rkysdq63ysoxx6idqgigek"
     },
-    "ufohqjvbj6uxwpsll3qtl6q45n5uzqvw": {
+    "mbfwg4fvrcqq2m3ijhncbkgyqolrm66b": {
       "name": "parallelio",
       "version": "2.5.9",
       "arch": {
@@ -879,7 +885,7 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "34cehxts5lzumgyqht2awckmpnzhu3stgakbsw4glcjfcro6o7ka====",
+      "package_hash": "4ukp25jj5fvt4u3tztimwtxgxgqpxsabushzikineil2fg3eyyiq====",
       "dependencies": [
         {
           "name": "cmake",
@@ -890,7 +896,7 @@
         },
         {
           "name": "mpi-serial",
-          "hash": "lv6v5cgghg46t7zqjc4mjovbftrsgkei",
+          "hash": "mkknmubeeiqh3uvtoq2w3zwwwlq4oc6j",
           "type": [
             "build",
             "link"
@@ -911,7 +917,7 @@
           ]
         }
       ],
-      "hash": "ufohqjvbj6uxwpsll3qtl6q45n5uzqvw"
+      "hash": "mbfwg4fvrcqq2m3ijhncbkgyqolrm66b"
     },
     "uhmouen54ifbpdmi3juuftsrnbamjxwk": {
       "name": "cmake",
@@ -985,7 +991,7 @@
       "package_hash": "3ky53hrr7bxrwp6ltjygpfolyquwjn6akjdkbuy4x3wwuw5eacba====",
       "hash": "uhmouen54ifbpdmi3juuftsrnbamjxwk"
     },
-    "lv6v5cgghg46t7zqjc4mjovbftrsgkei": {
+    "mkknmubeeiqh3uvtoq2w3zwwwlq4oc6j": {
       "name": "mpi-serial",
       "version": "2.3.0",
       "arch": {
@@ -1043,7 +1049,9 @@
           "85f19e3d962e4b2f99137e8cd0bcad412fe6185c771434ab3f04b5cdcca24a27"
         ],
         "cflags": [],
-        "cppflags": [],
+        "cppflags": [
+          "-fPIC"
+        ],
         "cxxflags": [],
         "fflags": [],
         "ldflags": [],
@@ -1053,7 +1061,7 @@
         "85f19e3d962e4b2f99137e8cd0bcad412fe6185c771434ab3f04b5cdcca24a27"
       ],
       "package_hash": "ofyrazdvmuhpv7xkdfmpdcxlmvqsf3m3esovtrlxt3o64mewsesa====",
-      "hash": "lv6v5cgghg46t7zqjc4mjovbftrsgkei"
+      "hash": "mkknmubeeiqh3uvtoq2w3zwwwlq4oc6j"
     },
     "7gc5ktmlpkdjexxx5e5fcy54gda3utdg": {
       "name": "netcdf-c",
@@ -1206,7 +1214,7 @@
       "package_hash": "shzsuavc7eqjkyty7geitkmbyixddqhfyoagi7ncyhz73k2kfc4a====",
       "hash": "a6y4v6zjloydydh4f37etlane6epkd4t"
     },
-    "5dgo5fyyrd6vsb7ckheif7vvxyrmdb3u": {
+    "papnbqus6geqqs5jp47fi74kshuqckcy": {
       "name": "parallelio",
       "version": "2.5.9",
       "arch": {
@@ -1272,7 +1280,7 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "34cehxts5lzumgyqht2awckmpnzhu3stgakbsw4glcjfcro6o7ka====",
+      "package_hash": "4ukp25jj5fvt4u3tztimwtxgxgqpxsabushzikineil2fg3eyyiq====",
       "dependencies": [
         {
           "name": "cmake",
@@ -1283,7 +1291,7 @@
         },
         {
           "name": "mpi-serial",
-          "hash": "hyggxg6offwm32txoqa3tofswin4ng43",
+          "hash": "v6vqlcsiw75bruaoooowszevughapkz7",
           "type": [
             "build",
             "link"
@@ -1304,7 +1312,7 @@
           ]
         }
       ],
-      "hash": "5dgo5fyyrd6vsb7ckheif7vvxyrmdb3u"
+      "hash": "papnbqus6geqqs5jp47fi74kshuqckcy"
     },
     "f3tb6eixis6m4im4ybmcxdzkt6lsdryr": {
       "name": "cmake",
@@ -1378,7 +1386,7 @@
       "package_hash": "3ky53hrr7bxrwp6ltjygpfolyquwjn6akjdkbuy4x3wwuw5eacba====",
       "hash": "f3tb6eixis6m4im4ybmcxdzkt6lsdryr"
     },
-    "hyggxg6offwm32txoqa3tofswin4ng43": {
+    "v6vqlcsiw75bruaoooowszevughapkz7": {
       "name": "mpi-serial",
       "version": "2.3.0",
       "arch": {
@@ -1436,7 +1444,9 @@
           "85f19e3d962e4b2f99137e8cd0bcad412fe6185c771434ab3f04b5cdcca24a27"
         ],
         "cflags": [],
-        "cppflags": [],
+        "cppflags": [
+          "-fPIC"
+        ],
         "cxxflags": [],
         "fflags": [],
         "ldflags": [],
@@ -1446,7 +1456,7 @@
         "85f19e3d962e4b2f99137e8cd0bcad412fe6185c771434ab3f04b5cdcca24a27"
       ],
       "package_hash": "ofyrazdvmuhpv7xkdfmpdcxlmvqsf3m3esovtrlxt3o64mewsesa====",
-      "hash": "hyggxg6offwm32txoqa3tofswin4ng43"
+      "hash": "v6vqlcsiw75bruaoooowszevughapkz7"
     },
     "72ttvo62ylhnhru3grutn3zqx4ve5mb4": {
       "name": "netcdf-c",
@@ -1599,7 +1609,7 @@
       "package_hash": "shzsuavc7eqjkyty7geitkmbyixddqhfyoagi7ncyhz73k2kfc4a====",
       "hash": "3sdawusq5jfffwzhwcvxbjlr25htnvh4"
     },
-    "5dg4stipm2tlzdjcradtlca3qxipzitv": {
+    "wehajdwyfg45ca2w2zpvlocvo3mbs56y": {
       "name": "parallelio",
       "version": "2.5.9",
       "arch": {
@@ -1665,7 +1675,7 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "34cehxts5lzumgyqht2awckmpnzhu3stgakbsw4glcjfcro6o7ka====",
+      "package_hash": "4ukp25jj5fvt4u3tztimwtxgxgqpxsabushzikineil2fg3eyyiq====",
       "dependencies": [
         {
           "name": "cmake",
@@ -1676,7 +1686,7 @@
         },
         {
           "name": "mpi-serial",
-          "hash": "iq2j374jxu4cf3owaiqnabujo4k3vps5",
+          "hash": "tlcbtvgczv2stfszkq4fhpys7b2d7cpk",
           "type": [
             "build",
             "link"
@@ -1697,7 +1707,7 @@
           ]
         }
       ],
-      "hash": "5dg4stipm2tlzdjcradtlca3qxipzitv"
+      "hash": "wehajdwyfg45ca2w2zpvlocvo3mbs56y"
     },
     "kdv6etw72xaw35p77q7hbl2mxy2tnf2m": {
       "name": "cmake",
@@ -1771,7 +1781,7 @@
       "package_hash": "3ky53hrr7bxrwp6ltjygpfolyquwjn6akjdkbuy4x3wwuw5eacba====",
       "hash": "kdv6etw72xaw35p77q7hbl2mxy2tnf2m"
     },
-    "iq2j374jxu4cf3owaiqnabujo4k3vps5": {
+    "tlcbtvgczv2stfszkq4fhpys7b2d7cpk": {
       "name": "mpi-serial",
       "version": "2.3.0",
       "arch": {
@@ -1829,7 +1839,9 @@
           "85f19e3d962e4b2f99137e8cd0bcad412fe6185c771434ab3f04b5cdcca24a27"
         ],
         "cflags": [],
-        "cppflags": [],
+        "cppflags": [
+          "-fPIC"
+        ],
         "cxxflags": [],
         "fflags": [],
         "ldflags": [],
@@ -1839,7 +1851,7 @@
         "85f19e3d962e4b2f99137e8cd0bcad412fe6185c771434ab3f04b5cdcca24a27"
       ],
       "package_hash": "ofyrazdvmuhpv7xkdfmpdcxlmvqsf3m3esovtrlxt3o64mewsesa====",
-      "hash": "iq2j374jxu4cf3owaiqnabujo4k3vps5"
+      "hash": "tlcbtvgczv2stfszkq4fhpys7b2d7cpk"
     },
     "na2ffsfhe6qm4udjel7h2bz7eiku3hpv": {
       "name": "netcdf-c",

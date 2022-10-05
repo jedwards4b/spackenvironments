@@ -5,7 +5,7 @@
 spack:
   # add package specs to the `specs` list
   definitions:
-  - packages: [parallelio ~mpi ^netcdf-fortran]
+  - packages: [parallelio ~mpi]
   - compilers: ['%gcc', '%oneapi', '%cce', '%intel', '%nvhpc']
   specs:
   - matrix:

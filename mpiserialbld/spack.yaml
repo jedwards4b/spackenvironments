@@ -5,7 +5,7 @@
 spack:
   # add package specs to the `specs` list
   definitions:
-  - packages: [mpi-serial]
+  - packages: [mpi-serial cppflags="-fPIC"]
   - compilers: ['%gcc', '%oneapi', '%cce', '%intel', '%nvhpc']
   specs:
   - matrix:
@@ -14,7 +14,7 @@ spack:
   view: false
   concretizer:
     unify: false
-    reuse: true
+    reuse: false
   compilers:
   - compiler:
       spec: cce@14.0.2
@@ -23,7 +23,8 @@ spack:
         cxx: CC
         f77: ftn
         fc: ftn
-      flags: {}
+      flags:
+        cppflags: null
       operating_system: sles15
       target: any
       modules:
@@ -38,7 +39,8 @@ spack:
         cxx: CC
         f77: ftn
         fc: ftn
-      flags: {}
+      flags:
+        cppflags: null
       operating_system: sles15
       target: any
       modules:
@@ -53,7 +55,8 @@ spack:
         cxx: CC
         f77: ftn
         fc: ftn
-      flags: {}
+      flags:
+        cppflags: null
       operating_system: sles15
       target: any
       modules:
@@ -68,7 +71,8 @@ spack:
         cxx: CC
         f77: ftn
         fc: ftn
-      flags: {}
+      flags:
+        cppflags: null
       operating_system: sles15
       target: any
       modules:
@@ -83,7 +87,8 @@ spack:
         cxx: CC
         f77: ftn
         fc: ftn
-      flags: {}
+      flags:
+        cppflags: null
       operating_system: sles15
       target: any
       modules:
@@ -98,7 +103,8 @@ spack:
         cxx: CC
         f77: ftn
         fc: ftn
-      flags: {}
+      flags:
+        cppflags: null
       operating_system: sles15
       target: any
       modules:
@@ -113,7 +119,8 @@ spack:
         cxx: CC
         f77: ftn
         fc: ftn
-      flags: {}
+      flags:
+        cppflags: null
       operating_system: sles15
       target: any
       modules:
@@ -128,174 +135,13 @@ spack:
         cxx: CC
         f77: ftn
         fc: ftn
-      flags: {}
+      flags:
+        cppflags: null
       operating_system: sles15
       target: any
       modules:
       - PrgEnv-nvhpc
       - nvhpc/22.7
-      environment: {}
-      extra_rpaths: []
-  - compiler:
-      spec: aocc@3.1.0
-      paths:
-        cc: clang
-        cxx: clang++
-        f77: null
-        fc: flang
-      flags:
-        cflags: null
-        cxxflags: null
-        fflags: null
-      operating_system: sles15sp3
-      target: x86_64
-      modules: []
-      environment: {}
-      extra_rpaths: []
-  - compiler:
-      spec: gcc@7.5.0
-      paths:
-        cc: gcc
-        cxx: g++
-        f77: null
-        fc: gfortran
-      flags: {}
-      operating_system: sles15sp3
-      target: x86_64
-      modules: []
-      environment: {}
-      extra_rpaths: []
-  - compiler:
-      spec: cce@14.0.3
-      paths:
-        cc: craycc
-        cxx: craycxx
-        f77: null
-        fc: crayftn
-      flags: {}
-      operating_system: sles15sp3
-      target: x86_64
-      modules: []
-      environment: {}
-      extra_rpaths: []
-  - compiler:
-      spec: gcc@12.1.0
-      paths:
-        cc: gcc
-        cxx: g++
-        f77: null
-        fc: gfortran
-      flags: {}
-      operating_system: sles15sp3
-      target: x86_64
-      modules: []
-      environment: {}
-      extra_rpaths: []
-  - compiler:
-      spec: aocc@3.2.0
-      paths:
-        cc: clang
-        cxx: clang++
-        f77: null
-        fc: flang
-      flags:
-        cflags: null
-        cxxflags: null
-        fflags: null
-      operating_system: sles15sp3
-      target: x86_64
-      modules: []
-      environment: {}
-      extra_rpaths: []
-  - compiler:
-      spec: intel@2022.1.0
-      paths:
-        cc: icx
-        cxx: icpx
-        f77: null
-        fc: /intle64/ifort
-      flags: {}
-      operating_system: sles15sp3
-      target: x86_64
-      modules: []
-      environment: {}
-      extra_rpaths: []
-  - compiler:
-      spec: nvhpc@22.3
-      paths:
-        cc: nvc
-        cxx: nvc++
-        f77: null
-        fc: nvfortran
-      flags: {}
-      operating_system: sles15sp3
-      target: x86_64
-      modules: []
-      environment: {}
-      extra_rpaths: []
-  - compiler:
-      spec: cce@14.0.2
-      paths:
-        cc: craycc
-        cxx: craycxx
-        f77: null
-        fc: crayftn
-      flags: {}
-      operating_system: sles15sp3
-      target: x86_64
-      modules: []
-      environment: {}
-      extra_rpaths: []
-  - compiler:
-      spec: gcc@11.2.0
-      paths:
-        cc: gcc
-        cxx: g++
-        f77: null
-        fc: gfortran
-      flags: {}
-      operating_system: sles15sp3
-      target: x86_64
-      modules: []
-      environment: {}
-      extra_rpaths: []
-  - compiler:
-      spec: cce@14.0.1
-      paths:
-        cc: craycc
-        cxx: craycxx
-        f77: null
-        fc: crayftn
-      flags: {}
-      operating_system: sles15sp3
-      target: x86_64
-      modules: []
-      environment: {}
-      extra_rpaths: []
-  - compiler:
-      spec: rocmcc@5.1.0
-      paths:
-        cc: amdclang
-        cxx: amdclang++
-        f77: null
-        fc: amdflang
-      flags: {}
-      operating_system: sles15sp3
-      target: x86_64
-      modules: []
-      environment: {}
-      extra_rpaths: []
-  - compiler:
-      spec: cce@13.0.2
-      paths:
-        cc: craycc
-        cxx: craycxx
-        f77: null
-        fc: crayftn
-      flags: {}
-      operating_system: sles15sp3
-      target: x86_64
-      modules: []
       environment: {}
       extra_rpaths: []
   packages:

@@ -6,28 +6,28 @@
   },
   "roots": [
     {
-      "hash": "zuhfgbdpwng6ezocdsvplvanvyh4imfy",
-      "spec": "mpi-serial%gcc"
+      "hash": "av6rmbr5sw2c3nm5jc4scmlaab5rwcrz",
+      "spec": "mpi-serial%gcc cppflags=\"-fPIC\""
     },
     {
-      "hash": "qbaefzmrwry2drvgo7yjrlnxfoj4dasz",
-      "spec": "mpi-serial%oneapi"
+      "hash": "oiheewtrxcwx4u54k2x33nqm7cattuop",
+      "spec": "mpi-serial%oneapi cppflags=\"-fPIC\""
     },
     {
-      "hash": "lv6v5cgghg46t7zqjc4mjovbftrsgkei",
-      "spec": "mpi-serial%cce"
+      "hash": "mkknmubeeiqh3uvtoq2w3zwwwlq4oc6j",
+      "spec": "mpi-serial%cce cppflags=\"-fPIC\""
     },
     {
-      "hash": "hyggxg6offwm32txoqa3tofswin4ng43",
-      "spec": "mpi-serial%intel"
+      "hash": "v6vqlcsiw75bruaoooowszevughapkz7",
+      "spec": "mpi-serial%intel cppflags=\"-fPIC\""
     },
     {
-      "hash": "iq2j374jxu4cf3owaiqnabujo4k3vps5",
-      "spec": "mpi-serial%nvhpc"
+      "hash": "tlcbtvgczv2stfszkq4fhpys7b2d7cpk",
+      "spec": "mpi-serial%nvhpc cppflags=\"-fPIC\""
     }
   ],
   "concrete_specs": {
-    "zuhfgbdpwng6ezocdsvplvanvyh4imfy": {
+    "av6rmbr5sw2c3nm5jc4scmlaab5rwcrz": {
       "name": "mpi-serial",
       "version": "2.3.0",
       "arch": {
@@ -85,7 +85,9 @@
           "85f19e3d962e4b2f99137e8cd0bcad412fe6185c771434ab3f04b5cdcca24a27"
         ],
         "cflags": [],
-        "cppflags": [],
+        "cppflags": [
+          "-fPIC"
+        ],
         "cxxflags": [],
         "fflags": [],
         "ldflags": [],
@@ -95,9 +97,9 @@
         "85f19e3d962e4b2f99137e8cd0bcad412fe6185c771434ab3f04b5cdcca24a27"
       ],
       "package_hash": "ofyrazdvmuhpv7xkdfmpdcxlmvqsf3m3esovtrlxt3o64mewsesa====",
-      "hash": "zuhfgbdpwng6ezocdsvplvanvyh4imfy"
+      "hash": "av6rmbr5sw2c3nm5jc4scmlaab5rwcrz"
     },
-    "qbaefzmrwry2drvgo7yjrlnxfoj4dasz": {
+    "oiheewtrxcwx4u54k2x33nqm7cattuop": {
       "name": "mpi-serial",
       "version": "2.3.0",
       "arch": {
@@ -155,7 +157,9 @@
           "85f19e3d962e4b2f99137e8cd0bcad412fe6185c771434ab3f04b5cdcca24a27"
         ],
         "cflags": [],
-        "cppflags": [],
+        "cppflags": [
+          "-fPIC"
+        ],
         "cxxflags": [],
         "fflags": [],
         "ldflags": [],
@@ -165,9 +169,9 @@
         "85f19e3d962e4b2f99137e8cd0bcad412fe6185c771434ab3f04b5cdcca24a27"
       ],
       "package_hash": "ofyrazdvmuhpv7xkdfmpdcxlmvqsf3m3esovtrlxt3o64mewsesa====",
-      "hash": "qbaefzmrwry2drvgo7yjrlnxfoj4dasz"
+      "hash": "oiheewtrxcwx4u54k2x33nqm7cattuop"
     },
-    "lv6v5cgghg46t7zqjc4mjovbftrsgkei": {
+    "mkknmubeeiqh3uvtoq2w3zwwwlq4oc6j": {
       "name": "mpi-serial",
       "version": "2.3.0",
       "arch": {
@@ -225,7 +229,9 @@
           "85f19e3d962e4b2f99137e8cd0bcad412fe6185c771434ab3f04b5cdcca24a27"
         ],
         "cflags": [],
-        "cppflags": [],
+        "cppflags": [
+          "-fPIC"
+        ],
         "cxxflags": [],
         "fflags": [],
         "ldflags": [],
@@ -235,9 +241,9 @@
         "85f19e3d962e4b2f99137e8cd0bcad412fe6185c771434ab3f04b5cdcca24a27"
       ],
       "package_hash": "ofyrazdvmuhpv7xkdfmpdcxlmvqsf3m3esovtrlxt3o64mewsesa====",
-      "hash": "lv6v5cgghg46t7zqjc4mjovbftrsgkei"
+      "hash": "mkknmubeeiqh3uvtoq2w3zwwwlq4oc6j"
     },
-    "hyggxg6offwm32txoqa3tofswin4ng43": {
+    "v6vqlcsiw75bruaoooowszevughapkz7": {
       "name": "mpi-serial",
       "version": "2.3.0",
       "arch": {
@@ -295,7 +301,9 @@
           "85f19e3d962e4b2f99137e8cd0bcad412fe6185c771434ab3f04b5cdcca24a27"
         ],
         "cflags": [],
-        "cppflags": [],
+        "cppflags": [
+          "-fPIC"
+        ],
         "cxxflags": [],
         "fflags": [],
         "ldflags": [],
@@ -305,9 +313,9 @@
         "85f19e3d962e4b2f99137e8cd0bcad412fe6185c771434ab3f04b5cdcca24a27"
       ],
       "package_hash": "ofyrazdvmuhpv7xkdfmpdcxlmvqsf3m3esovtrlxt3o64mewsesa====",
-      "hash": "hyggxg6offwm32txoqa3tofswin4ng43"
+      "hash": "v6vqlcsiw75bruaoooowszevughapkz7"
     },
-    "iq2j374jxu4cf3owaiqnabujo4k3vps5": {
+    "tlcbtvgczv2stfszkq4fhpys7b2d7cpk": {
       "name": "mpi-serial",
       "version": "2.3.0",
       "arch": {
@@ -365,7 +373,9 @@
           "85f19e3d962e4b2f99137e8cd0bcad412fe6185c771434ab3f04b5cdcca24a27"
         ],
         "cflags": [],
-        "cppflags": [],
+        "cppflags": [
+          "-fPIC"
+        ],
         "cxxflags": [],
         "fflags": [],
         "ldflags": [],
@@ -375,7 +385,7 @@
         "85f19e3d962e4b2f99137e8cd0bcad412fe6185c771434ab3f04b5cdcca24a27"
       ],
       "package_hash": "ofyrazdvmuhpv7xkdfmpdcxlmvqsf3m3esovtrlxt3o64mewsesa====",
-      "hash": "iq2j374jxu4cf3owaiqnabujo4k3vps5"
+      "hash": "tlcbtvgczv2stfszkq4fhpys7b2d7cpk"
     }
   }
 }
