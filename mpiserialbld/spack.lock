@@ -1,0 +1,381 @@
+{
+  "_meta": {
+    "file-type": "spack-lockfile",
+    "lockfile-version": 4,
+    "specfile-version": 3
+  },
+  "roots": [
+    {
+      "hash": "zuhfgbdpwng6ezocdsvplvanvyh4imfy",
+      "spec": "mpi-serial%gcc"
+    },
+    {
+      "hash": "qbaefzmrwry2drvgo7yjrlnxfoj4dasz",
+      "spec": "mpi-serial%oneapi"
+    },
+    {
+      "hash": "lv6v5cgghg46t7zqjc4mjovbftrsgkei",
+      "spec": "mpi-serial%cce"
+    },
+    {
+      "hash": "hyggxg6offwm32txoqa3tofswin4ng43",
+      "spec": "mpi-serial%intel"
+    },
+    {
+      "hash": "iq2j374jxu4cf3owaiqnabujo4k3vps5",
+      "spec": "mpi-serial%nvhpc"
+    }
+  ],
+  "concrete_specs": {
+    "zuhfgbdpwng6ezocdsvplvanvyh4imfy": {
+      "name": "mpi-serial",
+      "version": "2.3.0",
+      "arch": {
+        "platform": "cray",
+        "platform_os": "sles15",
+        "target": {
+          "name": "zen3",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avx",
+            "avx2",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "f16c",
+            "fma",
+            "fsgsbase",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen2"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "gcc",
+        "version": "11.2.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "fort-double-size": "8",
+        "fort-real-size": "4",
+        "patches": [
+          "85f19e3d962e4b2f99137e8cd0bcad412fe6185c771434ab3f04b5cdcca24a27"
+        ],
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "patches": [
+        "85f19e3d962e4b2f99137e8cd0bcad412fe6185c771434ab3f04b5cdcca24a27"
+      ],
+      "package_hash": "ofyrazdvmuhpv7xkdfmpdcxlmvqsf3m3esovtrlxt3o64mewsesa====",
+      "hash": "zuhfgbdpwng6ezocdsvplvanvyh4imfy"
+    },
+    "qbaefzmrwry2drvgo7yjrlnxfoj4dasz": {
+      "name": "mpi-serial",
+      "version": "2.3.0",
+      "arch": {
+        "platform": "cray",
+        "platform_os": "sles15",
+        "target": {
+          "name": "zen3",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avx",
+            "avx2",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "f16c",
+            "fma",
+            "fsgsbase",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen2"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "oneapi",
+        "version": "2022.1.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "fort-double-size": "8",
+        "fort-real-size": "4",
+        "patches": [
+          "85f19e3d962e4b2f99137e8cd0bcad412fe6185c771434ab3f04b5cdcca24a27"
+        ],
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "patches": [
+        "85f19e3d962e4b2f99137e8cd0bcad412fe6185c771434ab3f04b5cdcca24a27"
+      ],
+      "package_hash": "ofyrazdvmuhpv7xkdfmpdcxlmvqsf3m3esovtrlxt3o64mewsesa====",
+      "hash": "qbaefzmrwry2drvgo7yjrlnxfoj4dasz"
+    },
+    "lv6v5cgghg46t7zqjc4mjovbftrsgkei": {
+      "name": "mpi-serial",
+      "version": "2.3.0",
+      "arch": {
+        "platform": "cray",
+        "platform_os": "sles15",
+        "target": {
+          "name": "zen3",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avx",
+            "avx2",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "f16c",
+            "fma",
+            "fsgsbase",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen2"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "cce",
+        "version": "14.0.2"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "fort-double-size": "8",
+        "fort-real-size": "4",
+        "patches": [
+          "85f19e3d962e4b2f99137e8cd0bcad412fe6185c771434ab3f04b5cdcca24a27"
+        ],
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "patches": [
+        "85f19e3d962e4b2f99137e8cd0bcad412fe6185c771434ab3f04b5cdcca24a27"
+      ],
+      "package_hash": "ofyrazdvmuhpv7xkdfmpdcxlmvqsf3m3esovtrlxt3o64mewsesa====",
+      "hash": "lv6v5cgghg46t7zqjc4mjovbftrsgkei"
+    },
+    "hyggxg6offwm32txoqa3tofswin4ng43": {
+      "name": "mpi-serial",
+      "version": "2.3.0",
+      "arch": {
+        "platform": "cray",
+        "platform_os": "sles15",
+        "target": {
+          "name": "zen3",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avx",
+            "avx2",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "f16c",
+            "fma",
+            "fsgsbase",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen2"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "intel",
+        "version": "2022.1.0"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "fort-double-size": "8",
+        "fort-real-size": "4",
+        "patches": [
+          "85f19e3d962e4b2f99137e8cd0bcad412fe6185c771434ab3f04b5cdcca24a27"
+        ],
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "patches": [
+        "85f19e3d962e4b2f99137e8cd0bcad412fe6185c771434ab3f04b5cdcca24a27"
+      ],
+      "package_hash": "ofyrazdvmuhpv7xkdfmpdcxlmvqsf3m3esovtrlxt3o64mewsesa====",
+      "hash": "hyggxg6offwm32txoqa3tofswin4ng43"
+    },
+    "iq2j374jxu4cf3owaiqnabujo4k3vps5": {
+      "name": "mpi-serial",
+      "version": "2.3.0",
+      "arch": {
+        "platform": "cray",
+        "platform_os": "sles15",
+        "target": {
+          "name": "zen3",
+          "vendor": "AuthenticAMD",
+          "features": [
+            "abm",
+            "aes",
+            "avx",
+            "avx2",
+            "bmi1",
+            "bmi2",
+            "clflushopt",
+            "clwb",
+            "clzero",
+            "cx16",
+            "f16c",
+            "fma",
+            "fsgsbase",
+            "mmx",
+            "movbe",
+            "pclmulqdq",
+            "pku",
+            "popcnt",
+            "rdseed",
+            "sse",
+            "sse2",
+            "sse4_1",
+            "sse4_2",
+            "sse4a",
+            "ssse3",
+            "vaes",
+            "vpclmulqdq",
+            "xsavec",
+            "xsaveopt"
+          ],
+          "generation": 0,
+          "parents": [
+            "zen2"
+          ]
+        }
+      },
+      "compiler": {
+        "name": "nvhpc",
+        "version": "22.7"
+      },
+      "namespace": "builtin",
+      "parameters": {
+        "fort-double-size": "8",
+        "fort-real-size": "4",
+        "patches": [
+          "85f19e3d962e4b2f99137e8cd0bcad412fe6185c771434ab3f04b5cdcca24a27"
+        ],
+        "cflags": [],
+        "cppflags": [],
+        "cxxflags": [],
+        "fflags": [],
+        "ldflags": [],
+        "ldlibs": []
+      },
+      "patches": [
+        "85f19e3d962e4b2f99137e8cd0bcad412fe6185c771434ab3f04b5cdcca24a27"
+      ],
+      "package_hash": "ofyrazdvmuhpv7xkdfmpdcxlmvqsf3m3esovtrlxt3o64mewsesa====",
+      "hash": "iq2j374jxu4cf3owaiqnabujo4k3vps5"
+    }
+  }
+}
