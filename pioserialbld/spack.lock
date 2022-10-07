@@ -6,28 +6,28 @@
   },
   "roots": [
     {
-      "hash": "la2zrwjx2s25gfym6hsspshhibqu5iz4",
+      "hash": "wfihcennfqjxtymtxelaeo3vnfahlqor",
       "spec": "parallelio%gcc~mpi"
     },
     {
-      "hash": "kazrzdg3b5phl2bzd2jadtloshahsrnv",
+      "hash": "k77t53kgovb3ywbtyydo4cdoo27miwor",
       "spec": "parallelio%oneapi~mpi"
     },
     {
-      "hash": "mbfwg4fvrcqq2m3ijhncbkgyqolrm66b",
+      "hash": "ucaos7vdbvef2rj5i46wgtatpxjkpj4l",
       "spec": "parallelio%cce~mpi"
     },
     {
-      "hash": "papnbqus6geqqs5jp47fi74kshuqckcy",
+      "hash": "gwhfdvk25m4ewrtnkfrjpd5olsmwiuia",
       "spec": "parallelio%intel~mpi"
     },
     {
-      "hash": "wehajdwyfg45ca2w2zpvlocvo3mbs56y",
+      "hash": "efznzhuw44ximvp5h2cauahrdnugr4ok",
       "spec": "parallelio%nvhpc~mpi"
     }
   ],
   "concrete_specs": {
-    "la2zrwjx2s25gfym6hsspshhibqu5iz4": {
+    "wfihcennfqjxtymtxelaeo3vnfahlqor": {
       "name": "parallelio",
       "version": "2.5.9",
       "arch": {
@@ -93,11 +93,11 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "4ukp25jj5fvt4u3tztimwtxgxgqpxsabushzikineil2fg3eyyiq====",
+      "package_hash": "3svkc5sfdmzscvo53ecg5sjue6icaku77cpat5475vzb3b52eufq====",
       "dependencies": [
         {
           "name": "cmake",
-          "hash": "f5cv62qqljcxh3e4rginukoa47hhs7fc",
+          "hash": "qvxsiqgjwjrs3oazqcmggni6k4f772an",
           "type": [
             "build"
           ]
@@ -125,9 +125,9 @@
           ]
         }
       ],
-      "hash": "la2zrwjx2s25gfym6hsspshhibqu5iz4"
+      "hash": "wfihcennfqjxtymtxelaeo3vnfahlqor"
     },
-    "f5cv62qqljcxh3e4rginukoa47hhs7fc": {
+    "qvxsiqgjwjrs3oazqcmggni6k4f772an": {
       "name": "cmake",
       "version": "3.23.2",
       "arch": {
@@ -185,9 +185,7 @@
         "ownlibs": true,
         "qt": false,
         "cflags": [],
-        "cppflags": [
-          "-DNO_MPIMOD"
-        ],
+        "cppflags": [],
         "cxxflags": [],
         "fflags": [],
         "ldflags": [],
@@ -199,7 +197,7 @@
         "extra_attributes": {}
       },
       "package_hash": "3ky53hrr7bxrwp6ltjygpfolyquwjn6akjdkbuy4x3wwuw5eacba====",
-      "hash": "f5cv62qqljcxh3e4rginukoa47hhs7fc"
+      "hash": "qvxsiqgjwjrs3oazqcmggni6k4f772an"
     },
     "av6rmbr5sw2c3nm5jc4scmlaab5rwcrz": {
       "name": "mpi-serial",
@@ -424,7 +422,7 @@
       "package_hash": "shzsuavc7eqjkyty7geitkmbyixddqhfyoagi7ncyhz73k2kfc4a====",
       "hash": "gr6qahn267kaik2sufrulxcfi2g4b7da"
     },
-    "kazrzdg3b5phl2bzd2jadtloshahsrnv": {
+    "k77t53kgovb3ywbtyydo4cdoo27miwor": {
       "name": "parallelio",
       "version": "2.5.9",
       "arch": {
@@ -490,7 +488,7 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "4ukp25jj5fvt4u3tztimwtxgxgqpxsabushzikineil2fg3eyyiq====",
+      "package_hash": "3svkc5sfdmzscvo53ecg5sjue6icaku77cpat5475vzb3b52eufq====",
       "dependencies": [
         {
           "name": "cmake",
@@ -522,7 +520,7 @@
           ]
         }
       ],
-      "hash": "kazrzdg3b5phl2bzd2jadtloshahsrnv"
+      "hash": "k77t53kgovb3ywbtyydo4cdoo27miwor"
     },
     "z2ahke6lro67ax4skrru6dmm5mfymqpt": {
       "name": "cmake",
@@ -819,7 +817,7 @@
       "package_hash": "shzsuavc7eqjkyty7geitkmbyixddqhfyoagi7ncyhz73k2kfc4a====",
       "hash": "duzjga4us2rkysdq63ysoxx6idqgigek"
     },
-    "mbfwg4fvrcqq2m3ijhncbkgyqolrm66b": {
+    "ucaos7vdbvef2rj5i46wgtatpxjkpj4l": {
       "name": "parallelio",
       "version": "2.5.9",
       "arch": {
@@ -885,7 +883,7 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "4ukp25jj5fvt4u3tztimwtxgxgqpxsabushzikineil2fg3eyyiq====",
+      "package_hash": "3svkc5sfdmzscvo53ecg5sjue6icaku77cpat5475vzb3b52eufq====",
       "dependencies": [
         {
           "name": "cmake",
@@ -917,7 +915,7 @@
           ]
         }
       ],
-      "hash": "mbfwg4fvrcqq2m3ijhncbkgyqolrm66b"
+      "hash": "ucaos7vdbvef2rj5i46wgtatpxjkpj4l"
     },
     "uhmouen54ifbpdmi3juuftsrnbamjxwk": {
       "name": "cmake",
@@ -1214,7 +1212,7 @@
       "package_hash": "shzsuavc7eqjkyty7geitkmbyixddqhfyoagi7ncyhz73k2kfc4a====",
       "hash": "a6y4v6zjloydydh4f37etlane6epkd4t"
     },
-    "papnbqus6geqqs5jp47fi74kshuqckcy": {
+    "gwhfdvk25m4ewrtnkfrjpd5olsmwiuia": {
       "name": "parallelio",
       "version": "2.5.9",
       "arch": {
@@ -1280,7 +1278,7 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "4ukp25jj5fvt4u3tztimwtxgxgqpxsabushzikineil2fg3eyyiq====",
+      "package_hash": "3svkc5sfdmzscvo53ecg5sjue6icaku77cpat5475vzb3b52eufq====",
       "dependencies": [
         {
           "name": "cmake",
@@ -1306,13 +1304,13 @@
         },
         {
           "name": "netcdf-fortran",
-          "hash": "3sdawusq5jfffwzhwcvxbjlr25htnvh4",
+          "hash": "z2lwftcx6if2yfaqlskpxidh7cpgzhfb",
           "type": [
             "link"
           ]
         }
       ],
-      "hash": "papnbqus6geqqs5jp47fi74kshuqckcy"
+      "hash": "gwhfdvk25m4ewrtnkfrjpd5olsmwiuia"
     },
     "f3tb6eixis6m4im4ybmcxdzkt6lsdryr": {
       "name": "cmake",
@@ -1539,7 +1537,7 @@
       "package_hash": "c5gc47yl7apdfcoh64gmtmtatpbh7nqopnxt4gpismcgiq3f2rba====",
       "hash": "72ttvo62ylhnhru3grutn3zqx4ve5mb4"
     },
-    "3sdawusq5jfffwzhwcvxbjlr25htnvh4": {
+    "z2lwftcx6if2yfaqlskpxidh7cpgzhfb": {
       "name": "netcdf-fortran",
       "version": "4.5.3",
       "arch": {
@@ -1602,14 +1600,14 @@
         "ldlibs": []
       },
       "external": {
-        "path": "/glade/u/apps/gust/22.08b/spack/opt/spack/netcdf-fortran/4.5.3/intel/2022.1.0/cray-mpich/8.1.18",
+        "path": "/glade/u/apps/gust/22.08b/spack/opt/spack/netcdf-fortran/4.5.3/intel/2022.1.0/",
         "module": null,
         "extra_attributes": {}
       },
       "package_hash": "shzsuavc7eqjkyty7geitkmbyixddqhfyoagi7ncyhz73k2kfc4a====",
-      "hash": "3sdawusq5jfffwzhwcvxbjlr25htnvh4"
+      "hash": "z2lwftcx6if2yfaqlskpxidh7cpgzhfb"
     },
-    "wehajdwyfg45ca2w2zpvlocvo3mbs56y": {
+    "efznzhuw44ximvp5h2cauahrdnugr4ok": {
       "name": "parallelio",
       "version": "2.5.9",
       "arch": {
@@ -1675,7 +1673,7 @@
         "ldflags": [],
         "ldlibs": []
       },
-      "package_hash": "4ukp25jj5fvt4u3tztimwtxgxgqpxsabushzikineil2fg3eyyiq====",
+      "package_hash": "3svkc5sfdmzscvo53ecg5sjue6icaku77cpat5475vzb3b52eufq====",
       "dependencies": [
         {
           "name": "cmake",
@@ -1707,7 +1705,7 @@
           ]
         }
       ],
-      "hash": "wehajdwyfg45ca2w2zpvlocvo3mbs56y"
+      "hash": "efznzhuw44ximvp5h2cauahrdnugr4ok"
     },
     "kdv6etw72xaw35p77q7hbl2mxy2tnf2m": {
       "name": "cmake",
