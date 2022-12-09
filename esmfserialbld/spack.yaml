@@ -13,8 +13,10 @@ spack:
         ^parallelio~mpi~pnetcdf ^cray-libsci, esmf@8.4.0 +debug ~mpi ~xerces +parallelio
         +external-lapack ^netcdf-c~mpi+dap ^parallelio~mpi~pnetcdf build_type=Debug
         ^cray-libsci]
-  - compilers: ['%gcc@12.1.0', '%oneapi', '%cce@15.0.0', '%intel@2021.7.1', '%nvhpc']
-#  - compilers: ['%intel@2021.6.0']
+  
+#  - compilers: ['%gcc@12.1.0', '%oneapi', '%cce@15.0.0', '%intel@2021.7.1', '%nvhpc']
+  - compilers: ['%gcc@12.1.0', '%cce@15.0.0', '%intel@2021.7.1', '%nvhpc']
+#  - compilers: ['%cce@15.0.0']
   specs:
   - matrix:
     - [$packages]
