@@ -4,35 +4,24 @@
 # configuration settings.
 spack:
   # add package specs to the `specs` list
-  include:
-  - /glade/u/apps/gust/$NCAR_ENV_VERSION/config/packages.yaml
-  - /glade/u/apps/gust/$NCAR_ENV_VERSION/config/compilers.yaml
-  - /glade/u/apps/gust/$NCAR_ENV_VERSION/config/repos.yaml
-  - /glade/u/apps/gust/$NCAR_ENV_VERSION/config/modules.yaml
-  definitions:
-  - packages: [esmf@8.5.0b21 esmf_os=Unicos  ~mpi ~debug ~xerces +external-parallelio
-        +external-lapack ^netcdf-c~mpi+dap ^parallelio@2.5.10~mpi~pnetcdf, esmf@8.5.0b21
-        esmf_os=Unicos +debug ~mpi ~xerces +external-parallelio +external-lapack ^netcdf-c~mpi+dap
-        ^parallelio@2.5.10~mpi~pnetcdf build_type=Debug]
-  - compilers: ['%gcc@12.2.0', '%oneapi@2023.0.0^intel-oneapi-mkl', '%cce@15.0.1',
-      '%nvhpc@23.1']
-#  - compilers: ['%gcc@12.1.0', '%cce@15.0.0', '%intel@2021.7.1', '%nvhpc']
-#  - compilers: ['%oneapi@2023.0.0^intel-oneapi-mkl']
-  specs:
-  - matrix:
-    - [$packages]
-    - [$compilers]
+  specs: [esmf@8.5.0 ~mpi ~debug ~xerces +external-parallelio
+        +external-lapack ^parallelio@2.6.2~mpi~pnetcdf+ncint,
+        esmf@=8.6.0b11 ~mpi ~debug ~xerces +external-parallelio
+        +external-lapack ^parallelio@2.6.2~mpi~pnetcdf+ncint]
+
   view: false
   concretizer:
-    unify: false
-    reuse: true
+    unify: when_possible
+  config:
+    install_tree:
+      root: /work2/02503/edwardsj/frontera/sw
+      projections:
+        all: '{name}/{version}/{compiler.name}/{compiler.version}/'
+        esmf+debug: '{name}/{version}-debug/{compiler.name}/{compiler.version}/'
+
   modules:
     default:
-      roots:
-        lmod: /glade/u/apps/cseg/modules/$NCAR_ENV_VERSION
       lmod:
-        defaults:
-        - esmf@8.4.1~debug
-        projections:
-          esmf+debug: esmf/{version}-debug
-          parallelio build_type=Debug: parallelio/{version}-debug
+        core_compilers:
+        - clang@=3.4.2
+        - gcc@=4.8.5

@@ -4,32 +4,22 @@
 # configuration settings.
 spack:
   # add package specs to the `specs` list
-  include:
-  - /glade/u/apps/gust/$NCAR_ENV_VERSION/config/packages.yaml
-  - /glade/u/apps/gust/$NCAR_ENV_VERSION/config/compilers.yaml
-  - /glade/u/apps/gust/$NCAR_ENV_VERSION/config/repos.yaml
-  - /glade/u/apps/gust/$NCAR_ENV_VERSION/config/modules.yaml
-  definitions:
-  
-#  - packages: [parallelio ~mpi +ncint +logging -pnetcdf build_type=Debug ^netcdf-c@4.9.2
-#        ^netcdf-fortran, parallelio ~mpi +ncint -pnetcdf ^netcdf-c@4.9.2 ^netcdf-fortran]
-  - packages: [parallelio@2.6.0 +ncint ~mpi +logging -pnetcdf build_type=Debug ^netcdf-c@4.9.2]
-  - compilers: ['%gcc@12.2.0', '%oneapi@2023.0.0', '%cce@15.0.1', '%nvhpc@23.1']
-#  - compilers: ['%gcc@12.1.0']
-  specs:
-  - matrix:
-    - [$packages]
-    - [$compilers]
+  specs: [parallelio@2.6.2 +ncint ~mpi %intel@2023.1.0 build_type=Release, 
+          parallelio@2.6.2 +logging +ncint ~mpi %intel@2023.1.0 build_type=Debug]
+
   view: false
   concretizer:
-    unify: false
-    reuse: true
+    unify: when_possible
+  config:
+    install_tree:
+      root: /work2/02503/edwardsj/frontera/sw
+      projections:
+        all: '{name}/{version}/{compiler.name}/{compiler.version}/'
+        parallelio build_type=Debug: '{name}/{version}-debug/{compiler.name}/{compiler.version}/'
+
   modules:
     default:
-      roots:
-        lmod: /glade/u/apps/cseg/modules/$NCAR_ENV_VERSION
       lmod:
-        defaults:
-        - parallelio@2.6.0
-        projections:
-          parallelio build_type=Debug: parallelio/{version}-debug
+        core_compilers:
+        - clang@=3.4.2
+        - gcc@=4.8.5
