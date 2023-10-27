@@ -4,44 +4,409 @@
 # configuration settings.
 spack:
   # add package specs to the `specs` list
-  # add package specs to the `specs` list
-  include:
-  - /glade/u/apps/gust/$NCAR_ENV_VERSION/config/packages.yaml
-  - /glade/u/apps/gust/$NCAR_ENV_VERSION/config/compilers.yaml
-  - /glade/u/apps/gust/$NCAR_ENV_VERSION/config/repos.yaml
-  - /glade/u/apps/gust/$NCAR_ENV_VERSION/config/modules.yaml
-#  repos:
-#  - $spack/var/spack/repos/builtin
-#  - /glade/work/csgteam/spack-deployments/gust/23.04/envs/build/repos/ncar.hpcd
-#  - /glade/work/csgteam/spack-deployments/gust/23.04/envs/build/repos/future 
-#  - /glade/u/apps/gust/$NCAR_ENV_VERSION/spack/var/spack/repos/builtin
-
+  specs: [parallelio@2.6.2%intel@2023.1.0 +ncint +pnetcdf ^cray-mpich@8.1.25%intel
+      ^hdf5@1.12.2]
   view: false
-  definitions:
-  
-#  - packages: [parallelio@2.5.10+pnetcdf ^parallel-netcdf@1.12.3 ^netcdf-c@4.9.1,
-#      parallelio@2.5.10+pnetcdf +logging build_type=Debug ^netcdf-c@4.9.1 ^parallel-netcdf@1.12.3]
-  - packages: [parallelio@2.6.0+pnetcdf +ncint +logging build_type=Debug ^netcdf-c@4.9.2
-        ^parallel-netcdf@1.12.3]
-  - compilers: ['%oneapi@2023.0.0', '%cce@15.0.1', '%gcc@12.2.0', '%nvhpc@23.1']
-  
-#  - compilers: ['%cce@15.0.1']
-#  - mpilibs: [^cray-mpich@8.1.21, ^openmpi@4.1.4]
-  - mpilibs: [^cray-mpich@8.1.25]
-  specs:
-  - matrix:
-    - [$packages]
-    - [$compilers]
-    - [$mpilibs]
+  packages:
+    all:
+      providers:
+        mpi: [mpich]
+    cray-mpich:
+      externals:
+      - spec: cray-mpich@8.1.25%intel
+        prefix: /opt/cray/pe/mpich/8.1.25/ofi/intel/19.0/
+    cmake:
+      externals:
+      - spec: cmake@3.24.3
+        prefix: /global/common/software/nersc/pm-2022q4/spack/linux-sles15-zen/cmake-3.24.3-k5msymx/
   concretizer:
-    unify: false
-    reuse: true
+    unify: true
+  config:
+    install_tree:
+      root: /global/cfs/cdirs/ccsm1/sw/perlmutter/
+      projections:
+        ^mpi: '{name}/{version}/{^mpi.name}/{^mpi.version}/{compiler.name}/{compiler.version}/'
+        all: '{name}/{version}/{compiler.name}/{compiler.version}/'
+        gcc: '{name}/{version}/'
+  include:
+  - /global/common/software/spackecp/perlmutter/spack_settings/compilers.yaml
+  - /global/common/software/spackecp/perlmutter/spack_settings/packages.yaml
+  mirrors:
+    perlmutter-e4s-23.05: file:///global/common/software/spackecp/mirrors/perlmutter-e4s-23.05
+    perlmutter-e4s-22.11: file:///global/common/software/spackecp/mirrors/perlmutter-e4s-22.11
+  upstreams:
+    perlmutter-e4s-23.05:
+      install_tree: /global/common/software/spackecp/perlmutter/e4s-23.05/default/spack/opt/spack
+    perlmutter-e4s-22.11:
+      install_tree: /global/common/software/spackecp/perlmutter/e4s-22.11/default/spack/opt/spack
   modules:
     default:
       roots:
-        lmod: /glade/u/apps/cseg/modules/$NCAR_ENV_VERSION
+        lmod: /global/cfs/cdirs/ccsm1/sw/perlmutter/modules
+      arch_folder: false
+      'enable:':
+      - lmod
       lmod:
-        defaults:
-        - parallelio@2.6.0
-        projections:
-          parallelio build_type=Debug: parallelio/{version}-debug
+        naming_scheme: '{name}/{version}'
+        hash_length: 0
+        hierarchy:
+        - mpi
+        core_compilers:
+        - gcc@=7.5.0
+        - gcc@=7.5.0
+  compilers:
+  - compiler:
+      spec: dpcpp@2023.1.0
+      paths:
+        cc: /opt/intel/oneapi/compiler/2023.1.0/linux/bin/icx
+        cxx: /opt/intel/oneapi/compiler/2023.1.0/linux/bin/dpcpp
+        f77: null
+        fc: null
+      flags: {}
+      operating_system: sles15
+      target: x86_64
+      modules: []
+      environment: {}
+      extra_rpaths: []
+  - compiler:
+      spec: intel@2021.9.0
+      paths:
+        cc: /opt/intel/oneapi/compiler/2023.1.0/linux/bin/intel64/icc
+        cxx: /opt/intel/oneapi/compiler/2023.1.0/linux/bin/intel64/icpc
+        f77: /opt/intel/oneapi/compiler/2023.1.0/linux/bin/intel64/ifort
+        fc: /opt/intel/oneapi/compiler/2023.1.0/linux/bin/intel64/ifort
+      flags: {}
+      operating_system: sles15
+      target: x86_64
+      modules: []
+      environment: {}
+      extra_rpaths: []
+  - compiler:
+      spec: intel@2023.1.0
+      paths:
+        cc: /opt/intel/oneapi/compiler/2023.1.0/linux/bin/icx
+        cxx: /opt/intel/oneapi/compiler/2023.1.0/linux/bin/icpx
+        f77: /opt/intel/oneapi/compiler/2023.1.0/linux/bin/intel64/ifort
+        fc: /opt/intel/oneapi/compiler/2023.1.0/linux/bin/intel64/ifort
+      flags: {}
+      operating_system: sles15
+      target: x86_64
+      modules: [intel/2023.1.0]
+      environment:
+        prepend_path:
+          LD_LIBRARY_PATH: /opt/intel/oneapi/compiler/2023.1.0/linux/lib/x64
+        append_path:
+          LD_LIBRARY_PATH: /opt/cray/libfabric/1.15.2.0/lib64
+      extra_rpaths: []
+  - compiler:
+      spec: gcc@7.5.0
+      paths:
+        cc: /usr/bin/gcc
+        cxx: /usr/bin/g++
+        f77: /usr/bin/gfortran
+        fc: /usr/bin/gfortran
+      flags: {}
+      operating_system: sles15
+      target: any
+      modules: []
+  - compiler:
+      spec: nvhpc@21.11
+      paths:
+        cc: /opt/nvidia/hpc_sdk/Linux_x86_64/21.11/compilers/bin/nvc
+        cxx: /opt/nvidia/hpc_sdk/Linux_x86_64/21.11/compilers/bin/nvc++
+        f77: /opt/nvidia/hpc_sdk/Linux_x86_64/21.11/compilers/bin/nvfortran
+        fc: /opt/nvidia/hpc_sdk/Linux_x86_64/21.11/compilers/bin/nvfortran
+      flags: {}
+      operating_system: sles15
+      target: any
+      modules:
+      - PrgEnv-nvhpc
+      - nvhpc/21.11
+      - craype-x86-milan
+      - libfabric
+  - compiler:
+      spec: nvhpc@22.7
+      paths:
+        cc: /opt/nvidia/hpc_sdk/Linux_x86_64/22.7/compilers/bin/nvc
+        cxx: /opt/nvidia/hpc_sdk/Linux_x86_64/22.7/compilers/bin/nvc++
+        f77: /opt/nvidia/hpc_sdk/Linux_x86_64/22.7/compilers/bin/nvfortran
+        fc: /opt/nvidia/hpc_sdk/Linux_x86_64/22.7/compilers/bin/nvfortran
+      flags: {}
+      operating_system: sles15
+      target: any
+      modules:
+      - PrgEnv-nvhpc
+      - nvhpc/22.7
+      - craype-x86-milan
+      - libfabric
+  - compiler:
+      spec: nvhpc@23.1
+      paths:
+        cc: /opt/nvidia/hpc_sdk/Linux_x86_64/23.1/compilers/bin/nvc
+        cxx: /opt/nvidia/hpc_sdk/Linux_x86_64/23.1/compilers/bin/nvc++
+        f77: /opt/nvidia/hpc_sdk/Linux_x86_64/23.1/compilers/bin/nvfortran
+        fc: /opt/nvidia/hpc_sdk/Linux_x86_64/23.1/compilers/bin/nvfortran
+      flags: {}
+      operating_system: sles15
+      target: any
+      modules:
+      - PrgEnv-nvhpc
+      - nvhpc/23.1
+      - craype-x86-milan
+      - libfabric
+  - compiler:
+      spec: gcc@10.3.0
+      paths:
+        cc: cc
+        cxx: CC
+        f77: ftn
+        fc: ftn
+      flags: {}
+      operating_system: sles15
+      target: any
+      modules:
+      - PrgEnv-gnu
+      - gcc/10.3.0
+      - craype-x86-milan
+      - libfabric
+      extra_rpaths: []
+  - compiler:
+      spec: gcc@11.2.0
+      paths:
+        cc: cc
+        cxx: CC
+        f77: ftn
+        fc: ftn
+      flags: {}
+      operating_system: sles15
+      target: any
+      modules:
+      - PrgEnv-gnu
+      - gcc/11.2.0
+      - craype-x86-milan
+      - libfabric
+      extra_rpaths: []
+  - compiler:
+      spec: gcc@12.1.0
+      paths:
+        cc: cc
+        cxx: CC
+        f77: ftn
+        fc: ftn
+      flags: {}
+      operating_system: sles15
+      target: any
+      modules:
+      - PrgEnv-gnu
+      - gcc/12.1.0
+      - craype-x86-milan
+      - libfabric
+      extra_rpaths: []
+  - compiler:
+      spec: cce@15.0.0
+      paths:
+        cc: /opt/cray/pe/craype/default/bin/cc
+        cxx: /opt/cray/pe/craype/default/bin/CC
+        f77: /opt/cray/pe/craype/default/bin/ftn
+        fc: /opt/cray/pe/craype/default/bin/ftn
+      flags: {}
+      operating_system: sles15
+      target: any
+      modules:
+      - PrgEnv-cray
+      - cce/15.0.0
+      - craype-x86-milan
+      - libfabric
+      environment: {}
+      extra_rpaths: []
+  - compiler:
+      spec: intel@=2023.0.0
+      paths:
+        cc: /opt/intel/oneapi/compiler/2023.0.0/linux/bin/icx
+        cxx: /opt/intel/oneapi/compiler/2023.0.0/linux/bin/icpx
+        f77: null
+        fc: /intle64/ifort
+      flags: {}
+      operating_system: sles15sp4
+      target: x86_64
+      modules: []
+      environment: {}
+      extra_rpaths: []
+  - compiler:
+      spec: gcc@=7.5.0
+      paths:
+        cc: /usr/bin/gcc
+        cxx: /usr/bin/g++
+        f77: null
+        fc: /usr/bin/gfortran
+      flags: {}
+      operating_system: sles15sp4
+      target: x86_64
+      modules: []
+      environment: {}
+      extra_rpaths: []
+  - compiler:
+      spec: cce@=15.0.1
+      paths:
+        cc: /opt/cray/pe/cce/15.0.1/bin/craycc
+        cxx: /opt/cray/pe/cce/15.0.1/bin/craycxx
+        f77: null
+        fc: /opt/cray/pe/cce/15.0.1/bin/crayftn
+      flags: {}
+      operating_system: sles15sp4
+      target: x86_64
+      modules: []
+      environment: {}
+      extra_rpaths: []
+  - compiler:
+      spec: gcc@=12.2.0
+      paths:
+        cc: /opt/cray/pe/gcc/12.2.0/gcc
+        cxx: /opt/cray/pe/gcc/12.2.0/g++
+        f77: null
+        fc: /opt/cray/pe/gcc/12.2.0/gfortran
+      flags: {}
+      operating_system: sles15sp4
+      target: x86_64
+      modules: []
+      environment: {}
+      extra_rpaths: []
+  - compiler:
+      spec: nvhpc@=22.7
+      paths:
+        cc: /opt/nvidia/hpc_sdk/Linux_x86_64/22.7/compilers/bin/nvc
+        cxx: /opt/nvidia/hpc_sdk/Linux_x86_64/22.7/compilers/bin/nvc++
+        f77: null
+        fc: /opt/nvidia/hpc_sdk/Linux_x86_64/22.7/compilers/bin/nvfortran
+      flags: {}
+      operating_system: sles15sp4
+      target: x86_64
+      modules: []
+      environment: {}
+      extra_rpaths: []
+  - compiler:
+      spec: aocc@=3.2.0
+      paths:
+        cc: /opt/AMD/aocc-compiler-3.2.0/bin/clang
+        cxx: /opt/AMD/aocc-compiler-3.2.0/bin/clang++
+        f77: null
+        fc: /opt/AMD/aocc-compiler-3.2.0/bin/flang
+      flags:
+        cflags: null
+        cxxflags: null
+        fflags: null
+      operating_system: sles15sp4
+      target: x86_64
+      modules: []
+      environment: {}
+      extra_rpaths: []
+  - compiler:
+      spec: intel@=2022.2.0
+      paths:
+        cc: /opt/intel/oneapi/compiler/2022.2.0/linux/bin/icx
+        cxx: /opt/intel/oneapi/compiler/2022.2.0/linux/bin/icpx
+        f77: null
+        fc: /intle64/ifort
+      flags: {}
+      operating_system: sles15sp4
+      target: x86_64
+      modules: []
+      environment: {}
+      extra_rpaths: []
+  - compiler:
+      spec: cce@=16.0.1
+      paths:
+        cc: /opt/cray/pe/cce/16.0.1/bin/craycc
+        cxx: /opt/cray/pe/cce/16.0.1/bin/craycxx
+        f77: null
+        fc: /opt/cray/pe/cce/16.0.1/bin/crayftn
+      flags: {}
+      operating_system: sles15sp4
+      target: x86_64
+      modules: []
+      environment: {}
+      extra_rpaths: []
+  - compiler:
+      spec: nvhpc@=23.3
+      paths:
+        cc: /opt/nvidia/hpc_sdk/Linux_x86_64/23.3/compilers/bin/nvc
+        cxx: /opt/nvidia/hpc_sdk/Linux_x86_64/23.3/compilers/bin/nvc++
+        f77: null
+        fc: /opt/nvidia/hpc_sdk/Linux_x86_64/23.3/compilers/bin/nvfortran
+      flags: {}
+      operating_system: sles15sp4
+      target: x86_64
+      modules: []
+      environment: {}
+      extra_rpaths: []
+  - compiler:
+      spec: aocc@=4.0.0
+      paths:
+        cc: /opt/AMD/aocc-compiler-4.0.0/bin/clang
+        cxx: /opt/AMD/aocc-compiler-4.0.0/bin/clang++
+        f77: null
+        fc: /opt/AMD/aocc-compiler-4.0.0/bin/flang
+      flags:
+        cflags: null
+        cxxflags: null
+        fflags: null
+      operating_system: sles15sp4
+      target: x86_64
+      modules: []
+      environment: {}
+      extra_rpaths: []
+  - compiler:
+      spec: intel@=2023.1.0
+      paths:
+        cc: /opt/intel/oneapi/compiler/2023.1.0/linux/bin/icx
+        cxx: /opt/intel/oneapi/compiler/2023.1.0/linux/bin/icpx
+        f77: null
+        fc: /intle64/ifort
+      flags: {}
+      operating_system: sles15sp4
+      target: x86_64
+      modules: []
+      environment: {}
+      extra_rpaths: []
+  - compiler:
+      spec: cce@=16.0.0
+      paths:
+        cc: /opt/cray/pe/cce/16.0.0/bin/craycc
+        cxx: /opt/cray/pe/cce/16.0.0/bin/craycxx
+        f77: null
+        fc: /opt/cray/pe/cce/16.0.0/bin/crayftn
+      flags: {}
+      operating_system: sles15sp4
+      target: x86_64
+      modules: []
+      environment: {}
+      extra_rpaths: []
+  - compiler:
+      spec: nvhpc@=22.11
+      paths:
+        cc: /opt/nvidia/hpc_sdk/Linux_x86_64/22.11/compilers/bin/nvc
+        cxx: /opt/nvidia/hpc_sdk/Linux_x86_64/22.11/compilers/bin/nvc++
+        f77: null
+        fc: /opt/nvidia/hpc_sdk/Linux_x86_64/22.11/compilers/bin/nvfortran
+      flags: {}
+      operating_system: sles15sp4
+      target: x86_64
+      modules: []
+      environment: {}
+      extra_rpaths: []
+  - compiler:
+      spec: oneapi@=2023.1.0
+      paths:
+        cc: /opt/intel/oneapi/compiler/2023.1.0/linux/bin/icx
+        cxx: /opt/intel/oneapi/compiler/2023.1.0/linux/bin/icpx
+        f77: /opt/intel/oneapi/compiler/2023.1.0/linux/bin/ifx
+        fc: /opt/intel/oneapi/compiler/2023.1.0/linux/bin/ifx
+      flags: {}
+      operating_system: sles15
+      target: x86_64
+      modules: []
+      environment: {}
+      extra_rpaths: []
+
+  repos:
+  - /global/homes/j/jedwards/spack/var/spack/repos/builtin
